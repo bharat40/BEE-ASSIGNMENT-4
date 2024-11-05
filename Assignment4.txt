@@ -1,0 +1,17 @@
+db.students.insertOne({name: "Price", age: 17, grade: "A"})
+db.students.insertOne({name: "Soap", age: 22, grade: "A"})
+db.students.insertOne({name: "Ghost", age: 21, grade: "B"})
+
+db.students.find()
+
+db.students.find({age:{$gt: 18}})
+
+db.students.updateOne({name: "Price"}, {$set:{grade: "A+"}})
+
+db.students.deleteOne({ name: "Ghost" })
+
+db.students.countDocuments({ grade: "B" })
+
+db.students.find({}, {name: 1, grade: 1})
+
+db.students.find().sort({age: 1})
